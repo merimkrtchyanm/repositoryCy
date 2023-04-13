@@ -12,7 +12,7 @@ describe ('registration', () => {
         registerPage.zip ('zip')
         registerPage.ssn ('ssn')
         registerPage.username ('meriuser')
-        registerPage.password ('password')
+        registerPage.password ('passwoeaewewewerd')
         registerPage.repeat('password')
         // registerPage.submit ()
     })
