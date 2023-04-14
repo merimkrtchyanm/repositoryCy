@@ -1,0 +1,25 @@
+import { signup } from "./PageObjects/AutomationExersizes/SignUp"
+let username, secondusername 
+describe ('onlineshop', () => {
+it ('register', () => {
+    cy.visit ('https://www.automationexercise.com/login')  
+    signup.getUserName('Meri')
+    signup.getEmail('anymail@mail.mail')
+    signup.getUpButton()
+    cy.contains('Enter Account Information').should('be.visible')
+    cy.get('#uniform-id_gender2').click()
+    signup.getPassword('testpass')
+    signup.getBirthday(2, 6, 23)
+    cy.get('#newsletter').click()
+    signup.getFirstName('Meri')
+    signup.getLastName('mkrt')
+    signup.getCompany('myCompany')
+    signup.getAddress1('address1')
+    signup.getAddress2('address2')
+    signup.getCountry('Canada')
+    signup.getState('State')
+    signup.getCity('City')
+    signup.getZip('Zip')
+    signup.getPhoneNumber('phone')
+})
+    })
