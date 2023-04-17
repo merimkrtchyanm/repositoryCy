@@ -35,3 +35,4 @@ Cypress.Commands.add ('randomName', (length) => {
   }
   return result
 }) 
+
