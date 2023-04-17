@@ -9,8 +9,8 @@ require ('dotenv').config()
 module.exports = defineConfig ({
   e2e: {
     setupNodeEvents(on, config) {
-
     },
+    
     env: { 
       globalUrl:process.env.Global_URL
 
