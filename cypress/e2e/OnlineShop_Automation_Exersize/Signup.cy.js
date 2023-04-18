@@ -1,25 +1,30 @@
-import { signup } from "./PageObjects/AutomationExersizes/SignUp"
-let username, secondusername 
+import { signup } from "../../PageObjects/AutomationExersizes/SignUp" 
+
 describe ('onlineshop', () => {
 it ('register', () => {
+
+ // petqa avelacnem funciton random name ev mail. Arden es cred-ov account create eghatsa
+    
     cy.visit ('https://www.automationexercise.com/login')  
     signup.getUserName('Meri')
-    signup.getEmail('anymail@mail.mail')
+    signup.getEmail('meri1@meri.meri')
     signup.getUpButton()
     cy.contains('Enter Account Information').should('be.visible')
     cy.get('#uniform-id_gender2').click()
     signup.getPassword('testpass')
     signup.getBirthday(2, 6, 23)
     cy.get('#newsletter').click()
-    signup.getFirstName('Meri')
-    signup.getLastName('mkrt')
-    signup.getCompany('myCompany')
-    signup.getAddress1('address1')
-    signup.getAddress2('address2')
-    signup.getCountry('Canada')
-    signup.getState('State')
-    signup.getCity('City')
-    signup.getZip('Zip')
-    signup.getPhoneNumber('phone')
-})
+    signup.getFirstName()
+    signup.getLastName()
+    signup.getCompany()
+    signup.getAddress1()
+    signup.getAddress2()
+    signup.getCountry()
+    signup.getState()
+    signup.getCity()
+    signup.getZip()
+    signup.getPhoneNumber()
+    signup.getSignUpButton()
+    signup.GetSignupMessage()
     })
+})
