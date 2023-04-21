@@ -1,4 +1,8 @@
-import { AddresInfo } from "../../Utils/addressInfo" 
+import { AddressInfo } from "../../Utils/ValidAccountData"
+import { randomname } from "../../Utils/ValidAccountData"
+import { randomemail } from "../../Utils/ValidAccountData"
+
+// need to add randomname function
 
 class signUP {
 
@@ -7,11 +11,11 @@ class signUP {
     }
     
     getUserName (value){
-        cy.get ('[data-qa="signup-name"]').type(value)
+        cy.get ('[data-qa="signup-name"]').type(randomname.randomName(7))
     }
 
     getEmail (value){
-        cy.get ('[data-qa="signup-email"]').type(value)
+        cy.get ('[data-qa="signup-email"]').type(randomemail.randomEmail(4))
     }
     getUpButton (){
         cy.get ('[data-qa="signup-button"]').click()
@@ -28,43 +32,43 @@ class signUP {
     }
 
     getFirstName (){
-        cy.get('[data-qa="first_name"]').type(AddresInfo.firstName)
+        cy.get('[data-qa="first_name"]').type(AddressInfo.firstName)
     }
 
     getLastName () {
-        cy.get('[data-qa="last_name"]').type (AddresInfo.lastName)
+        cy.get('[data-qa="last_name"]').type (AddressInfo.lastName)
     }
 
     getCompany() {
-        cy.get ('[data-qa="company"]').type(AddresInfo.company)
+        cy.get ('[data-qa="company"]').type(AddressInfo.company)
     }
 
     getAddress1 () {
-        cy.get ('[data-qa="address"]').type(AddresInfo.Address)
+        cy.get ('[data-qa="address"]').type(AddressInfo.address)
     }
 
     getAddress2 () {
-        cy.get('[data-qa="address2"]').type(AddresInfo.Address2)
+        cy.get('[data-qa="address2"]').type(AddressInfo.address2)
 }
 
     getCountry(){
-        cy.get('#country').select(AddresInfo.Country)
+        cy.get('#country').select(AddressInfo.country)
     }
     
     getState () {
-        cy.get ('[data-qa="state"]').type (AddresInfo.State)
+        cy.get ('[data-qa="state"]').type (AddressInfo.state)
     }
 
     getCity (){
-        cy.get ('[data-qa="city"]').type(AddresInfo.city)
+        cy.get ('[data-qa="city"]').type(AddressInfo.city)
     }
     
     getZip() {
-        cy.get('[data-qa="zipcode"]').type(AddresInfo.zip)
+        cy.get('[data-qa="zipcode"]').type(AddressInfo.zip)
     }
 
     getPhoneNumber() {
-        cy.get('[data-qa="mobile_number"]').type(AddresInfo.phone)
+        cy.get('[data-qa="mobile_number"]').type(AddressInfo.phone)
     }
 
     getSignUpButton (){

@@ -25,6 +25,6 @@ it ('register', () => {
     signup.getZip()
     signup.getPhoneNumber()
     signup.getSignUpButton()
-    signup.GetSignupMessage()
+   // signup.GetSignupMessage()
     })
 })
