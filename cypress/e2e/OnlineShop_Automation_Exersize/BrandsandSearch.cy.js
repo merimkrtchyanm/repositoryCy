@@ -16,7 +16,7 @@ describe('Brnads and Searching', () => {
         })
         cy.get('.nav > :nth-child(1) > a > .pull-right').invoke('text').then(($el) => {
             numberCountPolo = $el
-             number= parseInt(numberCountPolo.slice(1, 2))
+            number= parseInt(numberCountPolo.slice(1, 2))
             cy.log(typeof(number))
         })
 
@@ -24,19 +24,22 @@ describe('Brnads and Searching', () => {
         cy.get('.product-overlay').each(($el, index, $list) => {
             expect($list).to.have.length(number)
         });
-
         cy.get('.nav > :nth-child(1) > a > .pull-right').click({force: true})
-       cy.get('.product-image-wrapper > .single-products > .productinfo > p')
-        .then(($el)=>{
-            if ($el.text().includes('Premium')) {
-                emptyarr = $el
-                cy.log(emptyarr.length)
+        cy.get('.product-image-wrapper > .single-products > .productinfo > p')
+            .then(($el)=>{
+                if ($el.text().includes('Premium')) {
+                    emptyarr = $el
+                    cy.log(emptyarr.length)
+                     } else {
+                        cy.log('wrong searched reuslt')
+                 }    
+             })
+        cy.get('.shop-menu > .nav > :nth-child(2) > a').click()
+        cy.get('#search_product').type('Top')
+        cy.get('#submit_search').click()
+        cy.get('.col-sm-4').each(($el, index, $list) => {
+            expect($list).to.have.length(15)
+             });
 
-            } else {
-                cy.log('wrong searched reuslt')
-            }    
-        })
-
-        
     })
 })

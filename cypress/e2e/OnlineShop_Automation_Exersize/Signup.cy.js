@@ -2,12 +2,9 @@ import { signup } from "../../PageObjects/AutomationExersizes/SignUp"
 
 describe ('onlineshop', () => {
 it ('register', () => {
-
- // petqa avelacnem funciton random name ev mail. Arden es cred-ov account create eghatsa
-    
     cy.visit ('https://www.automationexercise.com/login')  
-    signup.getUserName('Meri')
-    signup.getEmail('meri1@meri.meri')
+    signup.getUserName('')
+    signup.getEmail('')
     signup.getUpButton()
     cy.contains('Enter Account Information').should('be.visible')
     cy.get('#uniform-id_gender2').click()
@@ -25,6 +22,10 @@ it ('register', () => {
     signup.getZip()
     signup.getPhoneNumber()
     signup.getSignUpButton()
-   // signup.GetSignupMessage()
+        .should('have.css', 'background', 'rgb(254, 152, 15) none repeat scroll 0% 0% / auto padding-box border-box')
+        .and('have.css', 'color', 'rgb(255, 255, 255)')
+        .and('have.css', 'padding', '6px 25px')
+        .click()
+    signup.GetSignupMessage()
     })
 })

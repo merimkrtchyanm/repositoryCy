@@ -2,19 +2,17 @@ import { AddressInfo } from "../../Utils/ValidAccountData"
 import { randomname } from "../../Utils/ValidAccountData"
 import { randomemail } from "../../Utils/ValidAccountData"
 
-// need to add randomname function
-
 class signUP {
 
     visit () {
         cy.visit (Cypress.env('globalUrl'))
     }
     
-    getUserName (value){
+    getUserName (){
         cy.get ('[data-qa="signup-name"]').type(randomname.randomName(7))
     }
 
-    getEmail (value){
+    getEmail (){
         cy.get ('[data-qa="signup-email"]').type(randomemail.randomEmail(4))
     }
     getUpButton (){
@@ -72,10 +70,7 @@ class signUP {
     }
 
     getSignUpButton (){
-        cy.get('[data-qa="create-account"]').should('have.css', 'background', 'rgb(254, 152, 15) none repeat scroll 0% 0% / auto padding-box border-box')
-        .and('have.css', 'color', 'rgb(255, 255, 255)')
-        .and('have.css', 'padding', '6px 25px')
-        .click()
+       return  cy.get('[data-qa="create-account"]')
     }
 
     GetSignupMessage (){
