@@ -10,7 +10,6 @@ describe ('check motion of banner carusel', () => {
         })
         cy.get('.active > :nth-child(1) > .test_cases_list > .btn').should('be.visible').and('contain', 'Test Cases')
         cy.get('.active > :nth-child(1) > .apis_list > .btn').should('have.css', 'background-color', 'rgb(92, 184, 92)')
-        //.trigger('mouseover').wait(5000).should('have.css','background-color', '#FE980F')
         cy.wait(7000)
         cy.get('.item').should('have.class', 'active')
     })
