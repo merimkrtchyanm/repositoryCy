@@ -1,5 +1,5 @@
 import { signup } from "../../PageObjects/AutomationExersizes/SignUp"
-import { cartItems } from "../../PageObjects/AutomationExersizes/Cart_items"
+import { cartItems } from "../../PageObjects/AutomationExersizes/Cartitems"
 import { AddresInfo } from "../../Utils/addressInfo"
 import { signin } from "../../PageObjects/AutomationExersizes/singnIn"
 import { messages } from "../../Utils/messages"

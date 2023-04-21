@@ -1,5 +1,7 @@
 import { AddresInfo } from "../../Utils/addressInfo" 
 
+// need to add randomname function
+
 class signUP {
 
     visit () {
