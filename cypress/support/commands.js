@@ -36,3 +36,7 @@ Cypress.Commands.add ('randomName', (length) => {
   return result
 }) 
 
+
+import "cypress-real-events";
+
+
