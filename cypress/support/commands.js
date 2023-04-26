@@ -38,5 +38,7 @@ Cypress.Commands.add ('randomName', (length) => {
 
 
 import "cypress-real-events";
+import 'cypress-file-upload';
+
 
 
