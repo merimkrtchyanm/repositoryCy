@@ -1,28 +1,6 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import "cypress-real-events";
+import 'cypress-file-upload';
+import {bodyData} from "../fixtures/bodyDataPosts.json";
 
 Cypress.Commands.add ('randomName', (length) => {
   let result = ''
@@ -36,9 +14,35 @@ Cypress.Commands.add ('randomName', (length) => {
   return result
 }) 
 
+Cypress.Commands.add(
+  "addNewPost",
+  (newBodyData=bodyData) => {
+    cy.fixture("bodyDataPosts").then(() => {
+        cy.request({
+        method: "POST",
+        url: "https://jsonplaceholder.typicode.com/posts",
+        failOnStatusCode: false,
+         body: newBodyData,
+      }).then((resp) => {
+        cy.log(resp)
+      });
+    });
+  }
+);
 
-import "cypress-real-events";
-import 'cypress-file-upload';
+
+Cypress.Commands.add('getComments',() => {
+  cy.fixture("CommentObjSample").then((payload) => {
+    cy.request({
+      method: "GET",
+      url: "https://jsonplaceholder.typicode.com/posts/1/comments"
+    }).then(() => {
+    
+    });
+  });
+})
+
+
 
 
 
