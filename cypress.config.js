@@ -13,6 +13,7 @@ module.exports = defineConfig ({
     
     env: { 
       globalUrl:process.env.Global_URL
+      
 
     }
   }
